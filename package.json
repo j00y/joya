@@ -1,0 +1,10 @@
+{
+  "name": "joya",
+  "version": "1.0.0",
+  "description": "React CLI for custom component creation",
+  "main": "index.js",
+  "repository": "https://github.com/j00y/joya.git",
+  "author": "Jordi Sánchez",
+  "license": "MIT",
+  "private": false
+}
