@@ -1,10 +1,10 @@
 const fs = require("fs");
-const component = (name, lang) => {
+const component = (name, lang, type) => {
   const {
     context,
     index,
     page,
-  } = require(`../templates/react-page.js`);
+  } = require(`../templates/react-${type}.js`);
   const { capitalize } = require('../../utils')
   name = capitalize(name)
   const dir = `./${name}Page`;
@@ -20,7 +20,7 @@ const component = (name, lang) => {
     if (err) throw err;
   }
 
-  // component
+  // page
   fs.writeFile(
     `${dir}/${name}Container.${lang === "ts" ? "tsx" : "jsx"}`,
     page(name),
@@ -33,8 +33,9 @@ const component = (name, lang) => {
     index(name),
     writeFileErrorHandler
   );
-  // page
+  // context
   fs.writeFile(`${dir}/${name}Context.${lang}`, context(name, lang), writeFileErrorHandler);
+  console.log(`${name} ${type} created properly!`)
 };
 
 module.exports = component;

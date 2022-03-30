@@ -36,7 +36,7 @@ ${
     : ""
 }
 
-export const ${name}PageContext = createContext<${name}PageState>({} as any)
+export const ${name}PageContext = createContext${ lang === 'ts' ? `<${name}PageState>({} as any)` : '({})'}
 
 export const use${name} = () => useContext(${name}PageContext)
 `;

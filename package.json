@@ -1,6 +1,6 @@
 {
   "name": "joya-cli",
-  "version": "1.0.1",
+  "version": "1.2.1",
   "description": "React CLI for custom component creation",
   "main": "index.js",
   "repository": "https://github.com/j00y/joya.git",

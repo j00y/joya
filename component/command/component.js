@@ -1,11 +1,11 @@
 const fs = require("fs");
-const component = (name, lang) => {
+const component = (name, lang, type) => {
   const {
     component,
     props,
     test,
     index,
-  } = require(`../templates/react-component.js`);
+  } = require(`../templates/react-${type}.js`);
   const { capitalize } = require("../../utils");
   name = capitalize(name);
   const dir = `./${name}`;
@@ -44,6 +44,7 @@ const component = (name, lang) => {
   );
   // index
   fs.writeFile(`${dir}/index.${lang}`, index(name), writeFileErrorHandler);
+  console.log(`${name} ${type} created properly!`)
 };
 
 module.exports = component;

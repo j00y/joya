@@ -6,8 +6,8 @@ const type = args[0] || "component";
 const name = args[1];
 const lang = args[2] || "ts";
 
-if (!["component", "page"].includes(type))
-  throw new Error("You must include a type to create. (component or page)");
+if (!["component", "page", "context"].includes(type))
+  throw new Error("You must include a type to create. (component, page or context)");
 
 if (!["ts", "js"].includes(lang))
   throw new Error(
@@ -15,4 +15,4 @@ if (!["ts", "js"].includes(lang))
   );
 const command = require(`./${type}/command/${type}.js`);
 
-command(name, lang);
+command(name, lang, type);
