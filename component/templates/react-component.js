@@ -2,7 +2,7 @@
 // component.tsx
 exports.component = (name, lang) => `import React from 'react';
 //import './${name}.scss';
-${lang === ts ? `import { ${name}Props } from './${name}Props';`: ''}
+${lang === 'ts' ? `import { ${name}Props } from './${name}Props';`: ''}
 
 export const ${name} = (props${lang === 'ts' ? `: ${name}Props` : '' }) => {
   return <div>Hello 👋, I am a ${name} component.</div>;
