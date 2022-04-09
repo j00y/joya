@@ -6,7 +6,7 @@ const type = args[0] || "component";
 const name = args[1];
 const lang = args[2] || "ts";
 
-if (!["component", "page", "context", "test"].includes(type))
+if (!["component", "page", "context", "test", "api"].includes(type))
   throw new Error(
     "You must include a type to create. (component, page or context)"
   );

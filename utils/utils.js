@@ -1,4 +1,6 @@
 const fs = require("fs");
+const { dirname } = require("path");
+const path = require("path");
 
 const writeFileErrorHandler = (err) => {
   if (err) throw err;
@@ -19,6 +21,7 @@ const getExtension = (fileType, lang) => {
     case "index":
     case "props":
     case "context":
+    case "api":
       return lang;
     default:
       return lang;
@@ -27,7 +30,7 @@ const getExtension = (fileType, lang) => {
 exports.createFile = (lang, fileType, fileName, name) => {
   const extension = getExtension(fileType, lang);
   fs.readFile(
-    `./templates/react-${fileType}.${extension}`,
+    path.resolve(__dirname,`../templates/react-${fileType}.${extension}`),
     "utf-8",
     (err, data) => {
       extractFileContent(err, data, `${fileName}.${extension}`, name);
