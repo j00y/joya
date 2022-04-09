@@ -14,7 +14,7 @@ export async function post<T>(
   options?: AxiosRequestConfig
 ): Promise<T> {
   try {
-    return await axios.post<T>(serviceInstance, url, data, options);
+    return await serviceInstance.post<T>(url, data, options);
   } catch (error) {
     throw error;
   }
@@ -25,7 +25,7 @@ export async function get<T>(
   options?: AxiosRequestConfig
 ): Promise<T> {
   try {
-    return await axios.get<T>(serviceInstance, url, options);
+    return await serviceInstance.get<T>(url, options);
   } catch (error) {
     throw error;
   }
@@ -36,7 +36,7 @@ export async function patch<TRequest, TResponse>(
   options: AxiosRequestConfig = {}
 ): Promise<TResponse> {
   try {
-    return await axios.patch<TRequest, TResponse>(
+    return await serviceInstance.patch<TRequest, TResponse>(
       serviceInstance,
       url,
       data,
@@ -53,7 +53,7 @@ export async function put<T>(
   options: AxiosRequestConfig = {}
 ): Promise<T> {
   try {
-    return await axios.put<T>(serviceInstance, url, data, options);
+    return await serviceInstance.put<T>(url, data, options);
   } catch (error) {
     throw error;
   }
@@ -64,7 +64,7 @@ export async function deleteMethod<T>(
   options?: AxiosRequestConfig
 ): Promise<T> {
   try {
-    return await axios.deleteMethod<T>(serviceInstance, url, options);
+    return await serviceInstance.deleteMethod<T>(url, options);
   } catch (error) {
     throw error;
   }
