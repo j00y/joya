@@ -1,5 +1,7 @@
 import React from "react";
 
 export const NAME = (props) => {
-  return <div>Hello 👋, I am a NAME component.</div>;
+  return (
+    <div data-testid="NAME-container">Hello 👋, I am a NAME component.</div>
+  );
 };
