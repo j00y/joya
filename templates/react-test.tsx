@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { NAME } from "./NAME";
 import { NAMEProps } from "./NAMEProps";
 
@@ -12,7 +12,7 @@ describe("NAME Component", () => {
   };
 
   it("should render the component", () => {
-    const { component } = renderComponent();
+    const { component } = renderComponent({});
     expect(component()).toBeInTheDocument();
   });
 });
