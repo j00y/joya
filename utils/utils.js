@@ -17,6 +17,7 @@ const getExtension = (fileType, lang) => {
     case "test":
     case "page":
     case "page-layout":
+    case "class-component":
       return `${lang}x`;
     case "index":
     case "props":
@@ -30,7 +31,7 @@ const getExtension = (fileType, lang) => {
 exports.createFile = (lang, fileType, fileName, name) => {
   const extension = getExtension(fileType, lang);
   fs.readFile(
-    path.resolve(__dirname,`../templates/react-${fileType}.${extension}`),
+    path.resolve(__dirname, `../templates/react-${fileType}.${extension}`),
     "utf-8",
     (err, data) => {
       extractFileContent(err, data, `${fileName}.${extension}`, name);
